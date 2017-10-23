@@ -5,7 +5,11 @@
         signInUrl: '/SignIn',
         templatePath: './Templates/',
         signUpState: 'SignUpSt',
-        signUpUrl: '/SignUP'
+        signUpUrl: '/SignUP',
+        ajaxModelDialogState: 'AjaxModelDialogSt',
+        ajaxModelDialogUrl: '/AjaxModelDialog',
+
+        prasadRestApiURL:"https://jsonplaceholder.typicode.com"
     })
 
 })()

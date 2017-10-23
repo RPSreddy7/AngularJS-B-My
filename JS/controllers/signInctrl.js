@@ -14,7 +14,7 @@
             if (isValid) {
                 prasadService.enterusernameserv = $scope.formObjData.userDataCtrl;
                 prasadFactory.enterpasswordfact = $scope.formObjData.passDataCtrl;
-                $state.go(prasadConstantStates.signUpState);
+                $state.go(prasadConstantStates.ajaxModelDialogState);
 
             }
 
