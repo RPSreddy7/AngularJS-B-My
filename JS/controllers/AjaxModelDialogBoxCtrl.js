@@ -1,8 +1,8 @@
 (function() {
     'use strict';
-    appModule.controller('AjaxModelDialogBoxCtrl', ['$scope', '$rootScope', 'prasadConstantStates', 'prasadFactoryAjaxModel', AjaxModelDialogBoxFunc]);
+    appModule.controller('AjaxModelDialogBoxCtrl', ['$scope', '$rootScope', '$state', 'prasadConstantStates', 'prasadFactoryAjaxModel', '$uibModal', AjaxModelDialogBoxFunc]);
 
-    function AjaxModelDialogBoxFunc($scope, $rootScope, prasadConstantStates, prasadFactoryAjaxModel) {
+    function AjaxModelDialogBoxFunc($scope, $rootScope, $state, prasadConstantStates, prasadFactoryAjaxModel, $uibModal) {
 
         $scope.createButtonName = "CREATE";
         $scope.editButtonName = "EDIT";
@@ -24,6 +24,9 @@
         $scope.deleteApiData = deleteApiDataFunc;
 
         $scope.postsApiLinkAllData = [];
+        $scope.demolist=[];
+        var flag;
+        var z=[]
 
         function getApiDataFunc() {
             let rootUrl = prasadConstantStates.prasadRestApiURL;
@@ -60,7 +63,7 @@
                 console.log('postApiDataFunc executed finally block', d);
             });
         }
-      //  $scope.postApiData();
+        //  $scope.postApiData();
 
 
         function putApiDataFunc() {
@@ -80,7 +83,7 @@
 
         }
 
-      //  $scope.putApiData();
+        //  $scope.putApiData();
 
 
         function deleteApiDataFunc() {
@@ -99,45 +102,73 @@
 
         }
 
-     //   $scope.deleteApiData();
+        //   $scope.deleteApiData();
 
 
+        // Below functions are buttons operations for Modal-dialog box in application.
 
         function createButtonFunc() {
-            console.log('createbutton function executed');
 
+            var modalVar = $uibModal.open({
+                animation: true,
+                templateUrl: 'ModelDialogBox.html',
+                controller: 'ModalDialogBoxCtrl'
+            });
+            console.log('createbutton function executed');
         }
 
         function editButtonFunc() {
+            var modalVar = $uibModal.open({
+                animation: true,
+                templateUrl: 'ModelDialogBox.html',
+                controller: 'ModalDialogBoxCtrl'
+            });
             console.log("editbutton function executed");
-
         }
 
         function deleteButtonFunc() {
+            var modalVar = $uibModal.open({
+                animation: true,
+                templateUrl: 'ModelDialogBox.html',
+                controller: 'ModalDialogBoxCtrl'
+            });
             console.log("deletebutton function executed");
-
         }
 
         function resetButtonFunc() {
+            var modalVar = $uibModal.open({
+                animation: true,
+                templateUrl: 'ModelDialogBox.html',
+                controller: 'ModalDialogBoxCtrl'
+            });
             console.log("resetbutton function executed");
-
         }
 
         function saveButtonFunc() {
+            var modalVar = $uibModal.open({
+                animation: true,
+                templateUrl: 'ModelDialogBox.html',
+                controller: 'ModalDialogBoxCtrl'
+            });
             console.log("savebutton function executed");
-
         }
 
-
-        // The below statements are, Automatically the above functions inside data are executed.
-
-
-        // $scope.createButton();
-        // $scope.editButton();
-        // $scope.deleteButton();
-        // $scope.resetButton();
-        // $scope.saveButton();
     }
+
+    appModule.controller('ModalDialogBoxCtrl', function($scope, $uibModalInstance) {
+
+        $scope.modeltitle = " Modal Title Name Created";
+
+        $scope.confirm = function() {
+            console.log(' modal box confirm button called ')
+            $uibModalInstance.dismiss('cancel');
+        };
+
+        $scope.cancel = function() {
+            console.log(' modal box cancel button called ')
+            $uibModalInstance.dismiss('cancel');
+        };
+    });
 
 
 })()

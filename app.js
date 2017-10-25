@@ -20,12 +20,16 @@ var appModule = angular.module('mymodule', ['ui.router', 'ui.bootstrap']);
                 templateUrl: prasadConstantStates.templatePath + 'signUp.html',
                 controller: 'prasadSignUpCtrl'
             })
-             .state(prasadConstantStates.ajaxModelDialogState, {
+            .state(prasadConstantStates.ajaxModelDialogState, {
                 url: prasadConstantStates.ajaxModelDialogUrl,
                 templateUrl: prasadConstantStates.templatePath + 'AjaxModelDialogBox.html',
                 controller: 'AjaxModelDialogBoxCtrl'
+            })
+            .state(prasadConstantStates.exModelDialogState, {
+                url: prasadConstantStates.exModelDialogUrl,
+                templateUrl: prasadConstantStates.templatePath + 'ModelDialogBox.html',
+                controller: 'ModalInstanceCtrl'
             });
-
 
     }
 

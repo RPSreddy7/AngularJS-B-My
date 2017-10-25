@@ -8,6 +8,9 @@
         signUpUrl: '/SignUP',
         ajaxModelDialogState: 'AjaxModelDialogSt',
         ajaxModelDialogUrl: '/AjaxModelDialog',
+        
+        exModelDialogState: 'ExModelDialogSt',
+        exModelDialogUrl: '/ExModelBox',
 
         prasadRestApiURL:"https://jsonplaceholder.typicode.com"
     })
